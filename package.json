@@ -1,0 +1,19 @@
+{
+  "name": "geojson-area",
+  "version": "0.0.0",
+  "description": "geojson area",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "keywords": [
+    "geojson",
+    "area",
+    "geodesy"
+  ],
+  "author": "Tom MacWright",
+  "license": "BSD-2-Clause"
+}
