@@ -6,12 +6,14 @@ module.exports = function(_) {
             area += polygonArea(_.coordinates[i]);
         }
         return area;
+    } else {
+        return null;
     }
 };
 
 function polygonArea(coords) {
     var area = 0;
-    if (coords && (coords.length > 0)) {
+    if (coords && coords.length > 0) {
         area += Math.abs(ringArea(coords[0]));
         for (var i = 1; i < coords.length; i++) {
             area -= Math.abs(ringArea(coords[i]));
@@ -21,15 +23,9 @@ function polygonArea(coords) {
 }
 
 /**
- * APIMethod: getGeodesicArea
  * Calculate the approximate area of the polygon were it projected onto
  *     the earth.  Note that this area will be positive if ring is oriented
  *     clockwise, otherwise it will be negative.
- *
- * Parameters:
- * projection - {<OpenLayers.Projection>} The spatial reference system
- *     for the geometry coordinates.  If not provided, Geographic/WGS84 is
- *     assumed.
  *
  * Reference:
  * Robert. G. Chamberlain and William H. Duquette, "Some Algorithms for
