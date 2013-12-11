@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/mapbox/geojson-area.png)](https://travis-ci.org/mapbox/geojson-area)
+
 # geojson-area
 
 Calculate the area inside of a GeoJSON Polygon.
