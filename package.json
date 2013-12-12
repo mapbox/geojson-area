@@ -15,5 +15,8 @@
     "geodesy"
   ],
   "author": "Tom MacWright",
-  "license": "BSD-2-Clause"
+  "license": "BSD-2-Clause",
+  "dependencies": {
+    "wgs84": "0.0.0"
+  }
 }

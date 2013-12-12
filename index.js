@@ -1,3 +1,5 @@
+var wgs84 = require('wgs84');
+
 module.exports = function(_) {
     if (_.type === 'Polygon') return polygonArea(_.coordinates);
     else if (_.type === 'MultiPolygon') {
@@ -47,7 +49,7 @@ function ringArea(coords) {
             area += rad(p2[0] - p1[0]) * (2 + Math.sin(rad(p1[1])) + Math.sin(rad(p2[1])));
         }
 
-        area = area * 6378137 * 6378137 / 2;
+        area = area * wgs84.RADIUS * wgs84.RADIUS / 2;
     }
 
     return area;
