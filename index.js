@@ -1,6 +1,9 @@
 var wgs84 = require('wgs84');
 
-module.exports = function(_) {
+module.exports.geometry = geometry;
+module.exports.ring = ringArea;
+
+function geometry(_) {
     if (_.type === 'Polygon') return polygonArea(_.coordinates);
     else if (_.type === 'MultiPolygon') {
         var area = 0;
@@ -11,7 +14,7 @@ module.exports = function(_) {
     } else {
         return null;
     }
-};
+}
 
 function polygonArea(coords) {
     var area = 0;
@@ -38,6 +41,7 @@ function polygonArea(coords) {
  * {float} The approximate signed geodesic area of the polygon in square
  *     meters.
  */
+
 function ringArea(coords) {
     var area = 0;
 
