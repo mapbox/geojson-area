@@ -2,7 +2,7 @@
 
 # geojson-area
 
-Calculate the area inside of a [GeoJSON](http://geojson.org/) Polygon.
+Calculate the area inside of any [GeoJSON](http://geojson.org/) geometry.
 
 ## usage
 
@@ -20,7 +20,7 @@ var area = geojsonArea.geometry(obj);
 
 ### `geojsonArea.geometry(obj)`
 
-Given a Geometry object of type Polygon or MultiPolygon, return contained
+Given a Geometry object, return contained
 area as square meters. Invalid input will return `null`.
 
 Adapted from [OpenLayers](http://openlayers.org/)
