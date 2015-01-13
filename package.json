@@ -11,7 +11,7 @@
     "url": "git@github.com:mapbox/geojson-area.git"
   },
   "scripts": {
-    "test": "mocha -R spec"
+    "test": "tape test/basic.js"
   },
   "keywords": [
     "geojson",
@@ -22,5 +22,8 @@
   "license": "BSD-2-Clause",
   "dependencies": {
     "wgs84": "0.0.0"
+  },
+  "devDependencies": {
+    "tape": "^3.0.3"
   }
 }

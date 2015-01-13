@@ -1,14 +1,29 @@
 var gjArea = require('../'),
-    assert = require('assert');
+    test = require('tape'),
+    ill = require('./illinois.json'),
+    all = require('./all.json');
 
-describe('geojson area', function() {
-    it('computes the area of illinois', function() {
-        var ill = require('./illinois.json');
-        assert.equal(gjArea.geometry(ill), 145978332359.37125);
+test('geojson area', function(t) {
+    t.test('computes the area of illinois', function(t) {
+        t.equal(gjArea.geometry(ill), 145978332359.37125);
+        t.end();
     });
     // http://www.wolframalpha.com/input/?i=surface+area+of+earth
-    it('computes the area of the world', function() {
-        var all = require('./all.json');
-        assert.equal(gjArea.geometry(all), 511207893395811.06);
+    t.test('computes the area of the world', function(t) {
+        t.equal(gjArea.geometry(all), 511207893395811.06);
+        t.end();
     });
+    t.test('point has zero area', function(t) {
+        t.equal(gjArea.geometry({ type: 'Point', coordinates: [0,0] }), 0);
+        t.end();
+    });
+    t.test('linestring has zero area', function(t) {
+        t.equal(gjArea.geometry({ type: 'LineString', coordinates: [[0,0],[1,1]] }), 0);
+        t.end();
+    });
+    t.test('geometrycollection is the sum', function(t) {
+        t.equal(gjArea.geometry({ type: 'GeometryCollection', geometries: [all, ill] }), 511353871728170.44);
+        t.end();
+    });
+    t.end();
 });
