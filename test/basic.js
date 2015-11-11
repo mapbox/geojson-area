@@ -5,7 +5,7 @@ var gjArea = require('../'),
 
 test('geojson area', function(t) {
     t.test('computes the area of illinois', function(t) {
-        t.equal(gjArea.geometry(ill), 145978332359.37125);
+        t.equal(gjArea.geometry(ill), 145978332359.36746);
         t.end();
     });
     // http://www.wolframalpha.com/input/?i=surface+area+of+earth
