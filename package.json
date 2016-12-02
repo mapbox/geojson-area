@@ -1,5 +1,5 @@
 {
-  "name": "geojson-area",
+  "name": "@mapbox/geojson-area",
   "version": "0.2.1",
   "description": "calculate the physical area of a geojson geometry",
   "main": "index.js",
