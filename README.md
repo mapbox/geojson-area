@@ -6,12 +6,12 @@ Calculate the area inside of any [GeoJSON](http://geojson.org/) geometry.
 
 ## usage
 
-    npm install geojson-area
+    npm install @mapbox/geojson-area
 
 ## example
 
 ```js
-var geojsonArea = require('geojson-area');
+var geojsonArea = require('@mapbox/geojson-area');
 
 var area = geojsonArea.geometry(obj);
 ```
