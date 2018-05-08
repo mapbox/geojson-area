@@ -3,6 +3,7 @@
   "version": "0.2.2",
   "description": "calculate the physical area of a geojson geometry",
   "main": "index.js",
+  "types": "index.d.ts",
   "directories": {
     "test": "test"
   },
@@ -24,6 +25,7 @@
     "wgs84": "0.0.0"
   },
   "devDependencies": {
+    "@types/geojson": "^7946.0.3",
     "cz-conventional-changelog": "^1.2.0",
     "tape": "^3.0.3"
   },
