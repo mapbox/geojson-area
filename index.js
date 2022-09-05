@@ -9,7 +9,7 @@ function geometry(_) {
         case 'Polygon':
             return polygonArea(_.coordinates);
         case 'MultiPolygon':
-            for (i = 0; i < _.coordinates.length; i++) {
+            for (var i = 0; i < _.coordinates.length; i++) {
                 area += polygonArea(_.coordinates[i]);
             }
             return area;
@@ -19,7 +19,7 @@ function geometry(_) {
         case 'MultiLineString':
             return 0;
         case 'GeometryCollection':
-            for (i = 0; i < _.geometries.length; i++) {
+            for (var i = 0; i < _.geometries.length; i++) {
                 area += geometry(_.geometries[i]);
             }
             return area;
@@ -58,7 +58,7 @@ function ringArea(coords) {
     coordsLength = coords.length;
 
     if (coordsLength > 2) {
-        for (i = 0; i < coordsLength; i++) {
+        for (var i = 0; i < coordsLength; i++) {
             if (i === coordsLength - 2) {// i = N-2
                 lowerIndex = coordsLength - 2;
                 middleIndex = coordsLength -1;
