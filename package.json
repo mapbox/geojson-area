@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:mapbox/geojson-area.git"
+    "url": "git+https://github.com/mapbox/geojson-area.git"
   },
   "scripts": {
     "test": "tape test/basic.js"
@@ -31,5 +31,11 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "index.js"
+  ]
 }
