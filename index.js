@@ -55,7 +55,7 @@ function polygonArea(coords) {
 function ringArea(coords) {
     var p1, p2, p3, lowerIndex, middleIndex, upperIndex, i,
     area = 0,
-    coordsLength = coords.length;
+    coordsLength = isClosed(coords) ? coords.length - 1 : coords.length;
 
     if (coordsLength > 2) {
         for (i = 0; i < coordsLength; i++) {
@@ -86,4 +86,16 @@ function ringArea(coords) {
 
 function rad(_) {
     return _ * Math.PI / 180;
+}
+
+/**
+ * Whether a ring repeats its first position at the end, as GeoJSON requires.
+ * ringArea leaves that repeated position out: it adds nothing to the area in
+ * exact arithmetic, but in floating point it makes the result depend on which
+ * vertex the ring starts at. Unclosed rings are closed implicitly instead.
+ */
+function isClosed(coords) {
+    var first = coords[0],
+        last = coords[coords.length - 1];
+    return coords.length > 1 && first[0] === last[0] && first[1] === last[1];
 }
