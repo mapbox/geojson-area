@@ -1,3 +1,5 @@
+Starting after 0.2.2, release notes are published as [GitHub Releases](https://github.com/mapbox/geojson-area/releases).
+
 <a name="0.2.2"></a>
 ## [0.2.2](https://github.com/mapbox/geojson-area/compare/v0.2.1...v0.2.2) (2016-12-19)
 
